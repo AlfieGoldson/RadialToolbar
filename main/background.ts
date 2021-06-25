@@ -16,10 +16,10 @@ if (isProd) {
 	const mainWindow = createWindow('main', {
 		show: false,
 		// alwaysOnTop: true,
-		// transparent: true,
-		// frame: false,
+		transparent: true,
+		frame: false,
 	});
-	// mainWindow.maximize();
+	mainWindow.maximize();
 	mainWindow.show();
 
 	if (isProd) {
@@ -27,7 +27,6 @@ if (isProd) {
 	} else {
 		const port = process.argv[2];
 		await mainWindow.loadURL(`http://localhost:${port}/home`);
-		mainWindow.webContents.openDevTools();
 	}
 })();
 
